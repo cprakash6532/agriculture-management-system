@@ -17,79 +17,25 @@ Main Objectives
 6. To improve crop production and farming efficiency.
 7. To implement IoT-based smart farming solutions.
 Conclusion: The Agriculture Management System is an effective solution for modern agriculture. By combining software applications, IoT devices, and smart monitoring techniques, the system helps farmers improve productivity, manage resources efficiently, and move towards sustainable and technology-driven agriculture.
+ printf("Enter farming expense: ");
+        scanf("%f", &c[i].expense);
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Agriculture Management System</title>
-<style>
-body {
-    font-family: Arial;
-    background: #e8f5e9;
-    text-align: center;
-}
-h1 {
-    background: green;
-    color: white;
-    padding: 20px;
-}
-.box {
-    background: white;
-    padding: 20px;
-    margin: 20px auto;
-    width: 300px;
-    border-radius: 10px;
-}
-input, button {
-    padding: 10px;
-    margin: 8px;
-}
-button {
-    background: green;
-    color: white;
-    border: none;
-}
-</style>
-</head>
-<body>
-
-<h1>Agriculture Management System</h1>
-
-<div class="box">
-<h2>Crop Management</h2>
-<input id="crop" placeholder="Enter Crop Name">
-<button onclick="addCrop()">Add Crop</button>
-<p id="result"></p>
-</div>
-
-<div class="box">
-<h2>Soil Monitoring</h2>
-<p>Soil Moisture: 65%</p>
-<p>Temperature: 28°C</p>
-</div>
-
-<div class="box">
-<h2>Irrigation Management</h2>
-<button onclick="water()">Start Irrigation</button>
-<p id="status">Pump OFF</p>
-</div>
-
-<script>
-function addCrop() {
-    let crop = document.getElementById("crop").value;
-    if(crop.trim() === "") {
-        alert("Enter crop name");
-        return;
+        total += c[i].expense;
     }
-    document.getElementById("result").innerHTML =
-    "Added Crop: " + crop;
+
+    printf("\n--- CROP DETAILS ---\n");
+
+    for(i = 0; i < n; i++) {
+        printf("\nCrop: %s", c[i].name);
+        printf("\nLand Area: %d acres", c[i].area);
+        printf("\nExpense: Rs. %.2f\n", c[i].expense);
+    }
+
+    printf("\nTotal Farming Expense: Rs. %.2f\n", total);
+
+    printf("\nThank you for using the system!");
+
+    return 0;
 }
 
-function water() {
-    document.getElementById("status").innerHTML =
-    "Pump ON - Irrigation Started";
-}
-</script>
 
-</body>
-</html>
