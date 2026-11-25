@@ -17,7 +17,33 @@ Main Objectives
 6. To improve crop production and farming efficiency.
 7. To implement IoT-based smart farming solutions.
 Conclusion: The Agriculture Management System is an effective solution for modern agriculture. By combining software applications, IoT devices, and smart monitoring techniques, the system helps farmers improve productivity, manage resources efficiently, and move towards sustainable and technology-driven agriculture.
- printf("Enter farming expense: ");
+
+#include <stdio.h>
+
+struct Crop {
+    char name[30];
+    int area;
+    float expense;
+};
+
+int main() {
+    struct Crop c[10];
+    int n, i;
+    float total = 0;
+
+    printf("AGRICULTURE MANAGEMENT SYSTEM\n");
+
+    printf("Enter number of crops: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        printf("\nEnter crop name: ");
+        scanf("%29s", c[i].name);
+
+        printf("Enter land area (acres): ");
+        scanf("%d", &c[i].area);
+
+        printf("Enter farming expense: ");
         scanf("%f", &c[i].expense);
 
         total += c[i].expense;
@@ -37,5 +63,3 @@ Conclusion: The Agriculture Management System is an effective solution for moder
 
     return 0;
 }
-
-
